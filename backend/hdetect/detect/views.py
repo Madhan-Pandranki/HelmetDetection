@@ -6,6 +6,9 @@ import os
 import subprocess
 from django.http import HttpResponse
 
+def home(request):
+      return render(request, 'home.html')
+
 def upload_video(request):
     if request.method == 'POST':
         form = VideoUploadForm(request.POST, request.FILES)
@@ -50,3 +53,17 @@ def livedetect(request):
     print("Return code:", return_code)
     response_content = f"Return code: {return_code}\n\nStandard output:\n{stdout_str}\n\nStandard error:\n{stderr_str}"
     return HttpResponse(response_content)
+    # cap = cv2.VideoCapture(0)
+    # while True:
+    #     ret, frame = cap.read()
+    #     if not ret:
+    #         break
+    #     cv2.imshow('Webcam', frame)
+    #     command_l=f"python /home/jitu/Projects/Hdetect/backend/hdetect/yolov9/detect.py --weights /home/jitu/Projects/Hdetect/backend/hdetect/yolov9/best.pt --conf 0.5 --source frame --device cpu"
+    #     return_code = os.system(command_l)
+    #     print("Return code:", return_code)
+    #     if cv2.waitKey(1) & 0xFF == ord('q'): 
+    #         break
+    # cap.release()
+    # cv2.destroyAllWindows()
+    # return redirect('upload_i')

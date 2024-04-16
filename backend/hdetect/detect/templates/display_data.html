@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Display Data</title>
+</head>
+<body>
+    <h2>Data List</h2>
+    <ul>
+        {% for data in data_list %}
+            <li><a href ="http://127.0.0.1:8000/cam/{{data.id}}">{{data.name}}</a></li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

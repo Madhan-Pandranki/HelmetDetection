@@ -5,3 +5,7 @@ class Frame(models.Model):
 
 class MyModel(models.Model):
     image = models.FileField()
+
+class NameURL(models.Model):
+    name = models.CharField(max_length=100)
+    url = models.URLField()

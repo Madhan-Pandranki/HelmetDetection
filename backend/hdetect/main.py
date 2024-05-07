@@ -16,22 +16,6 @@ load_dotenv()
 g = geocoder.ip('me')
 CAMERA_LOCATION = g.json['address']+f'. [Lat: {g.lat}, Lng:{g.lng}]'
 
-# def sendSMS(number):
-
-#     TWILIO_ACCOUNT_SID = 'AC9a24f8d6a167aaa9f8e197b631e02c28'
-#     TWILIO_AUTH_TOKEN = '76131d4d4f15c1f9b181632db2b5eaef'
-
-
-#     client = Client(TWILIO_ACCOUNT_SID, TWILIO_AUTH_TOKEN)
-
-#     message = client.messages \
-#         .create(
-#             body=f'You were caught riding without helmet near {CAMERA_LOCATION}, and were fined Rupees 500. Please visit https://bit.ly/3QQxTRO to pay your due challan. If you are caught riding again without proper gear, you will be severely penalized.',
-#             from_='+19203455833',
-#             to=f'+{number}'
-#         )
-
-#     print(message.sid)
 
 def sendMail(mail):
     body = f'You were caught riding without helmet or triple riding near {CAMERA_LOCATION}, and were fined Rupees 500. Please visit https://bit.ly/3QQxTRO to pay your due challan. If you are caught riding again without proper gear, you will be severely penalized.'

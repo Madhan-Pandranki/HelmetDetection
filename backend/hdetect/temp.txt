@@ -1,1 +1,1 @@
-yolov9/runs/detect/exp4/0
+yolov9/runs/detect/exp2/BikesHelmets62_png.rf.cb065d4a4bc1879b47c69ffbe11da836.jpg

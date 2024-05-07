@@ -24,23 +24,6 @@ def upload_video(request):
             with open(file_path, 'r') as file:
                 line1 = file.readline()
                 print("Line 1:", line1)
-            cap = cv2.VideoCapture(line1)
-            if not cap.isOpened():
-                print("Error: Unable to open video file.")
-                return
-            ret, frame = cap.read()
-            if not ret:
-                print("Error: Unable to read frame.")
-                return
-            cv2.imshow('Video', frame)
-            while True:
-                ret, frame = cap.read()
-                if ret:
-                    cv2.imshow('Video', frame)
-                if cv2.waitKey(1) & 0xFF == ord('q'):
-                    break
-            cap.release()
-            cv2.destroyAllWindows()
             return redirect('upload_video') 
     else:
         form = VideoUploadForm()
@@ -75,7 +58,7 @@ def upload_image(request):
         form = VideoUploadForm()
     return render(request, 'upload_i.html', {'form': form})
  
-def livedetect(request):
+# def livedetect(request):
     command = ["python", "/home/jitu/Projects/Hdetect/backend/hdetect/yolov9/detect.py", "--weights", "/home/jitu/Projects/Hdetect/backend/hdetect/yolov9/best.pt", "--conf", "0.1", "--source", "0", "--device", "cpu"]
     process = subprocess.Popen(command, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
     stdout, stderr = process.communicate()

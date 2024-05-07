@@ -34,7 +34,7 @@ CAMERA_LOCATION = g.json['address']+f'. [Lat: {g.lat}, Lng:{g.lng}]'
 #     print(message.sid)
 
 def sendMail(mail):
-    body = f'You were caught riding without helmet near {CAMERA_LOCATION}, and were fined Rupees 500. Please visit https://bit.ly/3QQxTRO to pay your due challan. If you are caught riding again without proper gear, you will be severely penalized.'
+    body = f'You were caught riding without helmet or triple riding near {CAMERA_LOCATION}, and were fined Rupees 500. Please visit https://bit.ly/3QQxTRO to pay your due challan. If you are caught riding again without proper gear, you will be severely penalized.'
     message = MIMEText(body)
     message["Subject"] = 'Notification regarding e-challan fine'
     message["From"] = "jitendralohani01@gmail.com"

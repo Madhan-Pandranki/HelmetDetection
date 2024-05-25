@@ -22,10 +22,10 @@ const About = () => {
         passionate about using technology to improve safety.
       </p>
       <ul className="list-disc pl-6 mb-4">
-        <li>Name 1</li>
-        <li>Name 1</li>
-        <li>Name 1</li>
-        <li>Name 1</li>
+        <li>Anish Kumar</li>
+        <li>Harshita Kataria</li>
+        <li>Jithendra Lohani</li>
+        <li>Pandranki Madhan</li>
       </ul>
       <h2 className="text-xl font-semibold mb-2">Technical Details:</h2>
       <p className="mb-4">
@@ -35,7 +35,7 @@ const About = () => {
         <li>React for the frontend user interface</li>
         <li>Django for the backend server</li>
         <li>PyTorch for the computer vision algorithms</li>
-        <li>WebRTC for streaming video from surveillance cameras</li>
+        <li>insecam.org for streaming video from surveillance cameras</li>
       </ul>
     </div>
   );

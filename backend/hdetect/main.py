@@ -13,12 +13,12 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-g = geocoder.ip('me')
-CAMERA_LOCATION = g.json['address']+f'. [Lat: {g.lat}, Lng:{g.lng}]'
+# g = geocoder.ip('me')
+# CAMERA_LOCATION = g.json['address']+f'. [Lat: {g.lat}, Lng:{g.lng}]'
 
 
 def sendMail(mail):
-    body = f'You were caught riding without helmet or triple riding near {CAMERA_LOCATION}, and were fined Rupees 500. Please visit https://bit.ly/3QQxTRO to pay your due challan. If you are caught riding again without proper gear, you will be severely penalized.'
+    body = f'You were caught riding without helmet or triple riding, and were fined Rupees 500. Please visit https://bit.ly/3QQxTRO to pay your due challan. If you are caught riding again without proper gear, you will be severely penalized.'
     message = MIMEText(body)
     message["Subject"] = 'Notification regarding e-challan fine'
     message["From"] = "jitendralohani01@gmail.com"
@@ -27,7 +27,6 @@ def sendMail(mail):
         server.login(os.getenv('EMAIL'), os.getenv('PASS'))
         server.sendmail('jitendralohani01@gmail.com', mail, message.as_string())
     # server.quit()
-  
 
 database = pd.read_csv('database.csv')
 def countf(directory):

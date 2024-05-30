@@ -1,1 +1,1 @@
-yolov9/runs/detect/exp2/BikesHelmets62_png.rf.cb065d4a4bc1879b47c69ffbe11da836_qsUjmKL.jpg
+/home/jitu/Projects/Hdetect/backend/hdetect/yolov9/runs/detect/exp2/BikesHelmets62_png.rf.cb065d4a4bc1879b47c69ffbe11da836_Wlt8ktm_sRBKGmB.jpg

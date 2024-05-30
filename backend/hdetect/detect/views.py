@@ -2,6 +2,7 @@
 from rest_framework import generics, status
 from rest_framework.response import Response
 from rest_framework.views import APIView
+from django.http import HttpResponse
 from rest_framework.authtoken.models import Token
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.parsers import MultiPartParser, FormParser
@@ -54,8 +55,9 @@ class FileUploadView(APIView):
             file_path = "/home/jitu/Projects/Hdetect/backend/hdetect/temp.txt"
             line1 = ""
             with open(file_path, 'r') as file:
-                line1 = file.readline()
-            return Response({'message': 'File processed', 'output': line1}, status=status.HTTP_201_CREATED)
+                return HttpResponse(file.read(),content_type="image/jpeg")
+                # line1 = file.readline()
+            # return Response({'message': 'File processed', 'output': line1}, status=status.HTTP_201_CREATED)
         else:
             return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
